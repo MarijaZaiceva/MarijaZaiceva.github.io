@@ -111,12 +111,14 @@
 
           
         
-        <form action="?" method="POST">
-          <div class="g-recaptcha" data-sitekey="6LeaZ3EqAAAAALf8D-nzTNXEswgqJ4NsZOutBz2q"></div>
-          <br/>
-          <input type="submit" value="Submit">
-        </form>
+          <form action="?" method="POST">
+            <div class="g-recaptcha" data-sitekey="6LeaZ3EqAAAAALf8D-nzTNXEswgqJ4NsZOutBz2q"></div>
+            <br/>
+            <input type="submit" value="Submit">
+          </form>
 
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+          <script src="./captcha.js"></script>
 
         <form id="contactForm">
 
@@ -128,8 +130,9 @@
       
           <label for="message">Message:</label><br>
           <textarea id="message" name="message" required></textarea><br><br>
-          <input type="submit" class="btn btn--pink" value="Submit">
+          <input type="submit" class="btn btn--pink" value="Sūtīt">
       </form>
+      <script src="./contact.js"></script>
 
 
       <p id="responseMessage"></p>
