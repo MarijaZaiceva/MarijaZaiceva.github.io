@@ -52,20 +52,6 @@ app.post('/submit', async (req, res) => {
         const secretKey = '6LeKB3EqAAAAAGrFBIrmQWA2eO2SB0_dNiFKw5FS';
     const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaResponse}`;
 
-    try {
-        const response = await axios.post(url);
-        if (response.data.success) {
-            // Handle successful submission
-            console.log('Email:', email);
-            console.log('Message:', text);
-            res.send('Success!');
-        } else {
-            res.status(400).send('CAPTCHA verification failed.');
-        }
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Server error.');
-    }
 });
 
         // Here, you would normally send the data to your server using fetch or XMLHttpRequest.
