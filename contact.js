@@ -1,22 +1,34 @@
-function sendMail() {
-    var params = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
+document.getElementById("contactForm").onsubmit = function(event) {
+    event.preventDefault();
+
+    // Collecting the form data
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        document.getElementById("responseMessage").innerText = "Please enter a valid email address.";
+        return;
+    }
+
+    // If email is valid, prepare to send the data
+    const formData = {
+        name: name,
+        email: email,
+        message: message
     };
-  
-    const serviceID = "YOUR_SERVICE_ID";
-    const templateID = "YOUR_TEMPLETE_ID";
-  
-      emailjs.send(serviceID, templateID, params)
-      .then(res=>{
-          document.getElementById("name").value = "";
-          document.getElementById("email").value = "";
-          document.getElementById("message").value = "";
-          console.log(res);
-          alert("Your message sent successfully!!")
-  
-      })
-      .catch(err=>console.log(err));
-  
-  }
+
+
+    emailjs.send("service_j43ay6v", "template_6xje15m", formData)
+        .then((response) => {
+            document.getElementById("responseMessage").innerText = "Message sent successfully!";
+        }, (error) => {
+            document.getElementById("responseMessage").innerText = "Error sending message: " + error.text;
+        });
+    
+    // For demonstration purposes, we just log the data
+    console.log(formData);
+    document.getElementById("responseMessage").innerText = "Message would be sent!";
+};
