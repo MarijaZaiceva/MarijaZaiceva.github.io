@@ -53,12 +53,6 @@
         <a href="#contact" class="btn btn--pink">Get in touch</a>
       </div>
     </div>
-    <div class="footer__github-buttons">
-      <iframe
-        src="https://ghbtns.com/github-btn.html?user=nisarhassan12&repo=portfolio-template&type=watch&count=true"
-        frameborder="0" scrolling="0" width="170" height="20" title="Watch Portfolio Template on GitHub">
-      </iframe>
-    </div>
   </header>
 
   <main role="main">
@@ -106,31 +100,62 @@
 
   <section class="contact" id="contact">
     <div class="row">
-      <h2>Get in Touch</h2>
+      <h2>Rakstīt zīņu</h2>
       <div class="contact__info">
         <p>
-          If you wish to contact me, you can do it straight from the site or follow the link down below!
+          Šeit Jūs varāt atsūtīt man Jūsu ziņu.
         </p>
         <!-- Replace the email with yours -->
-        <h2>Email Submission Form</h2>
-<form id="emailForm">
-    <label for="email">Email:</label>
-    <input type="email" id="email" required>
-    <span id="emailError" class="error"></span><br><br>
-    
-    <label for="text">Your Message:</label><br>
-    <textarea id="text" required></textarea><br><br>
-    
-    <div class="g-recaptcha" data-sitekey="6LeKB3EqAAAAAGrFBIrmQWA2eO2SB0_dNiFKw5FS"></div>
-    <span id="captchaError" class="error"></span><br><br>
-    
-    <button type="submit" id="submitBtn">Submit</button>
-</form>
+        <script src="index.js"></script>
 
-
-          <div id="responseMessage"></div>
-      </div>
-      <script src="./contact.js"></script>
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+        ></script>
+        <script type="text/javascript">
+          (function () {
+            emailjs.init("J01QMSmqj93QY8gmJ");
+          })();
+        </script>
+      </head>
+      <body>
+        <div class="container border mt-3 bg-light">
+          <div class="row">
+            <div class="col-md-6 p-5 bg-primary text-white">
+              <h1>Hi there!</h1>
+              <h4>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo,
+              </h4>
+            </div>
+            <div class="col-md-6 border-left py-3">
+              <h1>Contact form</h1>
+              <div class="form-group">
+                <h5 for="name">Name</h5>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter name"
+                />
+              </div>
+              <div class="form-group">
+                <h5 for="email">Email</h5>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter email"
+                />
+              </div>
+              <div class="form-group">
+                <h5 for="message">Message</h5>
+                <textarea class="form-control" id="message" rows="3"></textarea>
+              </div>
+              <button class="btn btn-primary" onclick="sendMail()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </body>
         
       </div>
     </div>
