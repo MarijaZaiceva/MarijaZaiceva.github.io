@@ -106,57 +106,24 @@
           Šeit Jūs varāt atsūtīt man Jūsu ziņu.
         </p>
         <!-- Replace the email with yours -->
-        <script src="index.js"></script>
+        <form id="contactForm">
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required><br><br>
+      
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required><br><br>
+      
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" required></textarea><br><br>
+      
+          <input type="submit" value="Submit">
+      </form>
+      
+      <p id="responseMessage"></p>
 
-        <script
-          type="text/javascript"
-          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-        ></script>
-        <script type="text/javascript">
-          (function () {
-            emailjs.init("J01QMSmqj93QY8gmJ");
-          })();
-        </script>
-      </head>
-      <body>
-        <div class="container border mt-3 bg-light">
-          <div class="row">
-            <div class="col-md-6 p-5 bg-primary text-white">
-              <h1>Hi there!</h1>
-              <h4>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo,
-              </h4>
-            </div>
-            <div class="col-md-6 border-left py-3">
-              <h1>Contact form</h1>
-              <div class="form-group">
-                <h5 for="name">Name</h5>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Enter name"
-                />
-              </div>
-              <div class="form-group">
-                <h5 for="email">Email</h5>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Enter email"
-                />
-              </div>
-              <div class="form-group">
-                <h5 for="message">Message</h5>
-                <textarea class="form-control" id="message" rows="3"></textarea>
-              </div>
-              <button class="btn btn-primary" onclick="sendMail()">Submit</button>
-            </div>
-          </div>
-        </div>
-      </body>
-        
+      <script src = "contact.js"></script>
+      
+        //hhhhhhhhhhhhhhhhhhhhhhh
       </div>
     </div>
   </section>
