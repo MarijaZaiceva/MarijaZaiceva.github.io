@@ -6,13 +6,15 @@ document.getElementById("contactForm").onsubmit = function(event) {
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
-    // Email validation
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    //Email validation
+    const emailPattern = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (!email.match(emailPattern)) {
         document.getElementById("responseMessage").innerText = "Please enter a valid email address.";
-        return;
+        return; 
     }
 
+    
     // If email is valid, prepare to send the data
     const formData = {
         name: name,
