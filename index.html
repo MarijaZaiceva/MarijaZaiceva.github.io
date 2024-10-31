@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <!-- Put your site title here -->
   <title>
@@ -108,17 +109,17 @@
 
 
 
-        <body>
-          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+          
         
-          <form action="?" method="POST">
-            <div class="g-recaptcha" data-sitekey="6LeaZ3EqAAAAALf8D-nzTNXEswgqJ4NsZOutBz2q"></div>
-            <br/>
-            <input type="submit" value="Submit">
-          </form>
-        </body>
+        <form action="?" method="POST">
+          <div class="g-recaptcha" data-sitekey="6LeaZ3EqAAAAALf8D-nzTNXEswgqJ4NsZOutBz2q"></div>
+          <br/>
+          <input type="submit" value="Submit">
+        </form>
+
 
         <form id="contactForm">
+
           <label for="name">Name:</label><br>
           <input type="text" id="name" name="name" required><br><br>
       
@@ -127,8 +128,7 @@
       
           <label for="message">Message:</label><br>
           <textarea id="message" name="message" required></textarea><br><br>
-      
-          <input type="submit" value="Submit">
+          <input type="submit" class="btn btn--pink" value="Submit">
       </form>
 
 
