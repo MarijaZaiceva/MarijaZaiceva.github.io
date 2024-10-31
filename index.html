@@ -105,6 +105,16 @@
         <p>
           Šeit Jūs varāt atsūtīt man Jūsu ziņu.
         </p>
+
+
+        //Captcha and its validation 
+    <form id="captchaForm">
+        <div class="g-recaptcha" data-sitekey="6LeKB3EqAAAAAGrFBIrmQWA2eO2SB0_dNiFKw5FSТА"></div>
+        <button type="submit">Проверить</button>
+    </form>
+    <div id="result"></div>
+
+
         <!-- Replace the email with yours -->
         <form id="contactForm">
           <label for="name">Name:</label><br>
@@ -118,12 +128,13 @@
       
           <input type="submit" value="Submit">
       </form>
-      
+
+
       <p id="responseMessage"></p>
 
-      <script src = "contact.js"></script>
+      <script src = "captcha.js"></script>
       
-        //hhhhhhhhhhhhhhhhhhhhhhh
+      
       </div>
     </div>
   </section>
