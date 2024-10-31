@@ -49,21 +49,45 @@ app.post('/submit', async (req, res) => {
     const { email, text, recaptchaResponse } = req.body;
 
     // Verify reCAPTCHA
-        const secretKey = '6LeKB3EqAAAAAGrFBIrmQWA2eO2SB0_dNiFKw5FS';
+        const secretKey = '6LeKB3EqAAAAAL6HUeraDa4pw9nBt1wr81cuxvkE';
     const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${recaptchaResponse}`;
 
 });
 
-        // Here, you would normally send the data to your server using fetch or XMLHttpRequest.
-        // Example:
-        // fetch('/submit', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({ email, text, recaptchaResponse })
-        // });
+        //sending the e-mail
+        const nodemailer = require('nodemailer');
+
+// Create a transporter object
+let transporter = nodemailer.createTransport({
+    service: 'gmail', // Replace with your email service
+    auth: {
+        user: '3aicevamarija@gmail.com', // Your email address
+        pass: 'your_email_password' // Your email password or app-specific password
+    }
+});
+
+// Email options
+let mailOptions = {
+    from: 'your_email@gmail.com', // Sender address
+    to: 'recipient_email@example.com', // List of recipients
+    subject: 'Test Email', // Subject line
+    text: 'This is a test email sent using Node.js and Nodemailer!' // Plain text body
+};
+
+// Send mail
+transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+        return console.log('Error occurred: ' + error.message);
+    }
+    console.log('Email sent: ' + info.response);
+});
 
         // Reset form
         emailInput.value = '';
         textInput.value = '';
         grecaptcha.reset();
     }
+
+
+
+    
