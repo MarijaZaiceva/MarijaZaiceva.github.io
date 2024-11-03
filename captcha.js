@@ -21,7 +21,7 @@ form.addEventListener('submit', (e) =>{
         if (data.captchaSuccess){
             console.log("Validation")
         } else {
-            console.log("Validation failed")
+            console.log("Validation failed");
         }
     })
     .catch(err => console.error(err))

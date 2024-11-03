@@ -12,18 +12,21 @@ app-post ('/upload', function(req, res) {
     const params = new URLSearchParams({
         secret: '6LeaZ3EqAAAAALCc8d3sgUynNwtjCFjDzUFwstc3',
         response: req.body['g-recaptcha-response'],
-        remoteip: req.ip
+        remoteip: req.ip,
     })
 
     fetch('https://www.google.com/recaptcha/api/siteverify', {
         method: "POST",
         body: params,
     })
-    TouchEvent(res => res.json())
+    
+    .then(res => res.json())
     .then(data =>{
-        if (data.success){
-            res.json({ captchaSuccess: true})
-        } else res.json({ captchaSuccess: false})
+        if data.success{
+            res.json({captchaSuccess: true});
+        } else {
+            res.json({captchaSuccess : false});
+        }
     })
 });
 app. listen(port, () => {
