@@ -4,7 +4,7 @@
         email : document.getElementById("email").value,
         message : document.getElementById("message").value,
     }
-    const cap : captchaSuccess;
+    cap : document.getElementById("captchaSuccess");
     
     if (!cap){
         return;
@@ -17,7 +17,7 @@
     }
     
     // If email is valid, prepare to send the data
-    emailjs.send("service_j43ay6v", "template_6xje15m", formData).then(alert("Email Sent"))
+    emailjs.send("service_j43ay6v","template_6xje15m", formData).then(alert("Email Sent"))
         .then((response) => {
             document.getElementById("responseMessage").innerText = "Message sent successfully!";
         }, (error) => {

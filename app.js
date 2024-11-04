@@ -22,7 +22,7 @@ app-post ('/upload', function(req, res) {
     
     .then(res => res.json())
     .then(data =>{
-        if data.success{
+        if (data.success){
             res.json({captchaSuccess: true});
         } else {
             res.json({captchaSuccess : false});
