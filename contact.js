@@ -4,9 +4,9 @@
         email : document.getElementById("email").value,
         message : document.getElementById("message").value,
     }
-    cap : document.getElementById("captchaSuccess");
     
-    if (!cap){
+    if (!captchaSucces){
+        document.getElementById("responseMessage").innerText = "Captcha not solved";
         return;
     }
 
