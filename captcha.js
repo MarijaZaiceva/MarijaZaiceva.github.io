@@ -3,7 +3,8 @@ const form = document.querySelector('contactForm');
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
 
-    const captchaResponse = grecaptcha.getResponse();
+    const captchaResponse = grecaptcha.getResponse("6LeaZ3EqAAAAALf8D-nzTNXEswgqJ4NsZOutBz2q");
+    
     
     if (!captchaResponse.length > 0) {
         throw new Error("Please complete the CAPTCHA.");        
