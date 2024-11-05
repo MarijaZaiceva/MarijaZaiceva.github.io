@@ -27,4 +27,5 @@
     // For demonstration purposes, we just log the data
     console.log(formData);
     document.getElementById("responseMessage").innerText = "Message would be sent!";
+    document.getElementById("contactForm").reset();
 };
