@@ -1,9 +1,9 @@
 const form = document.querySelector('contactForm');
 
-form.addEventListener('submit', (e) =>{
+form.addEventListener('button', (e) =>{
     e.preventDefault();
 
-    const captchaResponse = grecaptcha.getResponse("6LeaZ3EqAAAAALf8D-nzTNXEswgqJ4NsZOutBz2q");
+    const captchaResponse = g-recaptcha.getResponse("6LeaZ3EqAAAAALf8D-nzTNXEswgqJ4NsZOutBz2q");
     
     
     if (!captchaResponse.length > 0) {
