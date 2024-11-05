@@ -1,8 +1,3 @@
-const form = document.querySelector('contactForm');
-
-form.addEventListener('button', (e) =>{
-    e.preventDefault();
-
     const captchaResponse = g-recaptcha.getResponse("6LeaZ3EqAAAAALf8D-nzTNXEswgqJ4NsZOutBz2q");
     
     
@@ -26,6 +21,3 @@ form.addEventListener('button', (e) =>{
         }
     })
     .catch(err => console.error(err))
-}
-
-)
