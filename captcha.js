@@ -1,4 +1,4 @@
-    const captchaResponse = g-recaptcha.getResponse("6LeaZ3EqAAAAALf8D-nzTNXEswgqJ4NsZOutBz2q");
+    const captchaResponse = document.getElementsByClass-Name("g-recaptcha-response")[0].value;
     
     
     if (!captchaResponse.length > 0) {
@@ -21,3 +21,4 @@
         }
     })
     .catch(err => console.error(err))
+    //"6LeaZ3EqAAAAALf8D-nzTNXEswgqJ4NsZOutBz2q"

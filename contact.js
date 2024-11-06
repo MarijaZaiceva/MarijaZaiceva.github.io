@@ -28,4 +28,4 @@
     console.log(formData);
     document.getElementById("responseMessage").innerText = "Message would be sent!";
     document.getElementById("contactForm").reset();
-};
+}
