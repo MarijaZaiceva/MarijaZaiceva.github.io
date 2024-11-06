@@ -5,7 +5,7 @@
         message : document.getElementById("message").value,
     }
     
-    if (!captchaSucces){
+    if (document.getElementById("g-recaptcha-response").value==""){
         document.getElementById("responseMessage").innerText = "Captcha not solved";
         return;
     }
