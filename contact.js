@@ -20,8 +20,10 @@
     emailjs.send("service_j43ay6v","template_6xje15m", formData).then(alert("Email Sent"))
         .then((response) => {
             document.getElementById("responseMessage").innerText = "Message sent successfully!";
+            console.log('SUCCESS!', response.status, response.text);
         }, (error) => {
             document.getElementById("responseMessage").innerText = "Error sending message: " + error.text;
+            console.log('FAILED...', error);
         });
     
     // For demonstration purposes, we just log the data
