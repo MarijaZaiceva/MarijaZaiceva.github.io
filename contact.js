@@ -26,7 +26,7 @@
             console.log('FAILED...', error);
         });
     
-    // For demonstration purposes, we just log the data
+    // For demonstration purposes, we log the data
     console.log(formData);
     document.getElementById("responseMessage").innerText = "Ziņojums ir gatavs nosūtīšanai";
     document.getElementById("contactForm").reset();
